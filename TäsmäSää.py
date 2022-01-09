@@ -1,8 +1,8 @@
 import sqlite3
-import http.client
-import requests
+import requests #### Requests kirjastolla http pyynnöt on näppärämpiä
 from datetime import datetime
 
+# Funktio joka kirjoittaa lokia
 def kirjoita_lokia(parametri):
     aikaleima = datetime.now().strftime('%d.%m.%Y klo %H.%M:%S')
    
@@ -76,9 +76,9 @@ if syöte2.upper() == "K":
         laskuri = 0
         if vastauksen_status == 200:
             html = str(vastaus.text)
-            indeksi = html.index('<span class="temperature-plus"')
-            alku = indeksi + 46
-            loppu = alku + 4
+            indeksi = html.index('Temperature') # Tämä teksti etsitään html sisällöstä
+            alku = indeksi + 11 # Tämän verran Temperature sanan alusta niin alkaa lukema
+            loppu = alku + 5 # Tässä lukema päättyy
             html2 = html[alku:loppu]
             print(f"Lämpötila {paikkakunta} on {html2}")
             laskuri += 1
@@ -100,4 +100,5 @@ else:
     
 print()
 conn.close()
-print("Ohjelma päättyy")
+print("Tack och adjö")
+
