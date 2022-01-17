@@ -1,5 +1,5 @@
 import sqlite3
-import requests #### Requests kirjastolla http pyynnöt on näppärämpiä
+import requests #### Requests kirjastolla http pyynnöt on näppärämpiä Tee pip install requests -komento!
 from datetime import datetime
 
 # Funktio joka kirjoittaa lokia
